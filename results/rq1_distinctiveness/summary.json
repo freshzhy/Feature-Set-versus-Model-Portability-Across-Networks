@@ -1,0 +1,62 @@
+[
+  {
+    "dataset": "UNSW",
+    "n_classes": 8,
+    "n_pairs": 28,
+    "mean_rho": 0.6634,
+    "median_rho": 0.6759,
+    "min_rho": 0.4595,
+    "max_rho": 0.8523,
+    "pct_pairs_lt_0.30": 0.0,
+    "pct_pairs_lt_0.50": 14.3,
+    "most_similar_pair": "Analysis ↔ Backdoor",
+    "most_similar_rho": 0.8523,
+    "most_distinct_pair": "Analysis ↔ Generic",
+    "most_distinct_rho": 0.4595
+  },
+  {
+    "dataset": "CIC",
+    "n_classes": 10,
+    "n_pairs": 45,
+    "mean_rho": 0.4749,
+    "median_rho": 0.4276,
+    "min_rho": 0.1442,
+    "max_rho": 0.9051,
+    "pct_pairs_lt_0.30": 4.4,
+    "pct_pairs_lt_0.50": 62.2,
+    "most_similar_pair": "DoS attacks-SlowHTTPTest ↔ FTP-BruteForce",
+    "most_similar_rho": 0.9051,
+    "most_distinct_pair": "FTP-BruteForce ↔ Infilteration",
+    "most_distinct_rho": 0.1442
+  },
+  {
+    "dataset": "ToN",
+    "n_classes": 8,
+    "n_pairs": 28,
+    "mean_rho": 0.61,
+    "median_rho": 0.6312,
+    "min_rho": 0.3109,
+    "max_rho": 0.8255,
+    "pct_pairs_lt_0.30": 0.0,
+    "pct_pairs_lt_0.50": 17.9,
+    "most_similar_pair": "dos ↔ mitm",
+    "most_similar_rho": 0.8255,
+    "most_distinct_pair": "dos ↔ password",
+    "most_distinct_rho": 0.3109
+  },
+  {
+    "dataset": "BoT",
+    "n_classes": 3,
+    "n_pairs": 3,
+    "mean_rho": 0.8114,
+    "median_rho": 0.8314,
+    "min_rho": 0.7638,
+    "max_rho": 0.8392,
+    "pct_pairs_lt_0.30": 0.0,
+    "pct_pairs_lt_0.50": 0.0,
+    "most_similar_pair": "DoS ↔ Reconnaissance",
+    "most_similar_rho": 0.8392,
+    "most_distinct_pair": "DDoS ↔ Reconnaissance",
+    "most_distinct_rho": 0.7638
+  }
+]

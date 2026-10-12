@@ -1,0 +1,144 @@
+RQ3 结果摘要（变体 trainshap：SHAP-10 改为源端训练集正例计算，MI/Gain 不变）
+========================================================================
+
+与主实验（未去重、相同 seed）对比，std 测试集：
+  DoS            Full-40                  F1 主实验 0.9419 → 训练集SHAP 0.9419（Δ +0.0000）  AUC 0.9980 → 0.9980
+  DoS            Gain-10                  F1 主实验 0.9277 → 训练集SHAP 0.9277（Δ +0.0000）  AUC 0.9965 → 0.9965
+  DoS            Gain-10-Direct           F1 主实验 0.0136 → 训练集SHAP 0.0136（Δ +0.0000）  AUC 0.4655 → 0.4655
+  DoS            MI-10                    F1 主实验 0.9290 → 训练集SHAP 0.9290（Δ +0.0000）  AUC 0.9968 → 0.9968
+  DoS            MI-10-Direct             F1 主实验 0.0229 → 训练集SHAP 0.0229（Δ +0.0000）  AUC 0.4942 → 0.4942
+  DoS            Random-10                F1 主实验 0.9189 → 训练集SHAP 0.9195（Δ +0.0006）  AUC 0.9956 → 0.9962
+  DoS            Random-10-Direct         F1 主实验 0.0567 → 训练集SHAP 0.0518（Δ -0.0049）  AUC 0.4800 → 0.4793
+  DoS            Random-10-single         F1 主实验 0.9175 → 训练集SHAP 0.9175（Δ +0.0000）  AUC 0.9962 → 0.9962
+  DoS            SHAP-10                  F1 主实验 0.9264 → 训练集SHAP 0.9283（Δ +0.0019）  AUC 0.9966 → 0.9967
+  DoS            SHAP-10-Direct           F1 主实验 0.0768 → 训练集SHAP 0.0587（Δ -0.0180）  AUC 0.5769 → 0.5857
+  DoS            SHAP-10-NoPort           F1 主实验 0.9192 → 训练集SHAP 0.9220（Δ +0.0027）  AUC 0.9962 → 0.9963
+  DoS            SHAP-10-NoPort-Direct    F1 主实验 0.0518 → 训练集SHAP 0.0497（Δ -0.0021）  AUC 0.4988 → 0.4923
+  DoS            Target-10                F1 主实验 0.9404 → 训练集SHAP 0.9404（Δ +0.0000）  AUC 0.9979 → 0.9979
+  Reconnaissance Full-40                  F1 主实验 0.9703 → 训练集SHAP 0.9703（Δ +0.0000）  AUC 0.9994 → 0.9994
+  Reconnaissance Gain-10                  F1 主实验 0.8714 → 训练集SHAP 0.8714（Δ +0.0000）  AUC 0.9872 → 0.9872
+  Reconnaissance Gain-10-Direct           F1 主实验 0.0733 → 训练集SHAP 0.0733（Δ +0.0000）  AUC 0.6011 → 0.6011
+  Reconnaissance MI-10                    F1 主实验 0.9089 → 训练集SHAP 0.9089（Δ +0.0000）  AUC 0.9808 → 0.9808
+  Reconnaissance MI-10-Direct             F1 主实验 0.0885 → 训练集SHAP 0.0885（Δ +0.0000）  AUC 0.7051 → 0.7051
+  Reconnaissance Random-10                F1 主实验 0.8817 → 训练集SHAP 0.8869（Δ +0.0052）  AUC 0.9821 → 0.9840
+  Reconnaissance Random-10-Direct         F1 主实验 0.1256 → 训练集SHAP 0.1242（Δ -0.0015）  AUC 0.6287 → 0.6228
+  Reconnaissance Random-10-single         F1 主实验 0.8795 → 训练集SHAP 0.8795（Δ +0.0000）  AUC 0.9862 → 0.9862
+  Reconnaissance SHAP-10                  F1 主实验 0.9283 → 训练集SHAP 0.9216（Δ -0.0067）  AUC 0.9944 → 0.9940
+  Reconnaissance SHAP-10-Direct           F1 主实验 0.0736 → 训练集SHAP 0.0737（Δ +0.0001）  AUC 0.6459 → 0.6275
+  Reconnaissance SHAP-10-NoPort           F1 主实验 0.9271 → 训练集SHAP 0.9291（Δ +0.0021）  AUC 0.9916 → 0.9916
+  Reconnaissance SHAP-10-NoPort-Direct    F1 主实验 0.1017 → 训练集SHAP 0.1994（Δ +0.0976）  AUC 0.7283 → 0.7322
+  Reconnaissance Target-10                F1 主实验 0.9683 → 训练集SHAP 0.9683（Δ +0.0000）  AUC 0.9994 → 0.9994
+
+本变体特征集与主实验同方法特征集的 Top-10 Jaccard（1 = 完全相同）：
+  DoS            UNSW  SHAP-10          0.43
+  DoS            UNSW  MI-10            1.00
+  DoS            UNSW  Gain-10          1.00
+  DoS            UNSW  SHAP-10-NoPort   0.33
+  DoS            CIC   SHAP-10          0.67
+  DoS            CIC   MI-10            1.00
+  DoS            CIC   Gain-10          1.00
+  DoS            CIC   SHAP-10-NoPort   0.54
+  DoS            ToN   SHAP-10          0.67
+  DoS            ToN   MI-10            1.00
+  DoS            ToN   Gain-10          1.00
+  DoS            ToN   SHAP-10-NoPort   0.54
+  DoS            BoT   SHAP-10          0.67
+  DoS            BoT   MI-10            1.00
+  DoS            BoT   Gain-10          1.00
+  DoS            BoT   SHAP-10-NoPort   0.67
+  Reconnaissance UNSW  SHAP-10          0.67
+  Reconnaissance UNSW  MI-10            1.00
+  Reconnaissance UNSW  Gain-10          1.00
+  Reconnaissance UNSW  SHAP-10-NoPort   0.54
+  Reconnaissance ToN   SHAP-10          0.82
+  Reconnaissance ToN   MI-10            1.00
+  Reconnaissance ToN   Gain-10          1.00
+  Reconnaissance ToN   SHAP-10-NoPort   1.00
+  Reconnaissance BoT   SHAP-10          1.00
+  Reconnaissance BoT   MI-10            1.00
+  Reconnaissance BoT   Gain-10          1.00
+  Reconnaissance BoT   SHAP-10-NoPort   0.82
+
+各条件平均（跨所有源–目标配置与 10 个 seed）：
+                                      f1_nat  f1_std  pr_auc_nat  pr_auc_std  auc_nat  auc_std
+semantic_class condition                                                                      
+DoS            Full-40                0.7446  0.9419      0.8091      0.9736   0.9980   0.9980
+               Gain-10                0.7256  0.9277      0.7945      0.9517   0.9964   0.9965
+               Gain-10-Direct         0.0177  0.0136      0.1635      0.1694   0.4525   0.4655
+               MI-10                  0.7277  0.9290      0.7962      0.9533   0.9967   0.9968
+               MI-10-Direct           0.0218  0.0229      0.1775      0.1562   0.4955   0.4942
+               Random-10              0.7132  0.9195      0.7861      0.9513   0.9961   0.9962
+               Random-10-Direct       0.0546  0.0518      0.1720      0.1603   0.4705   0.4793
+               Random-10-single       0.7104  0.9175      0.7792      0.9501   0.9960   0.9962
+               SHAP-10                0.7215  0.9283      0.7852      0.9577   0.9966   0.9967
+               SHAP-10-Direct         0.0545  0.0587      0.1666      0.1382   0.5869   0.5857
+               SHAP-10-NoPort         0.7144  0.9220      0.7867      0.9483   0.9961   0.9963
+               SHAP-10-NoPort-Direct  0.0364  0.0497      0.1714      0.1394   0.4947   0.4923
+               Target-10              0.7420  0.9404      0.8060      0.9717   0.9979   0.9979
+Reconnaissance Full-40                0.8552  0.9703      0.9696      0.9955   0.9994   0.9994
+               Gain-10                0.7899  0.8714      0.9254      0.9281   0.9893   0.9872
+               Gain-10-Direct         0.0782  0.0733      0.1899      0.1977   0.6144   0.6011
+               MI-10                  0.7988  0.9089      0.9153      0.9155   0.9851   0.9808
+               MI-10-Direct           0.1156  0.0885      0.2489      0.2478   0.7173   0.7051
+               Random-10              0.7789  0.8869      0.9004      0.9245   0.9871   0.9840
+               Random-10-Direct       0.1519  0.1242      0.2563      0.2515   0.6328   0.6228
+               Random-10-single       0.7860  0.8795      0.9152      0.9292   0.9890   0.9862
+               SHAP-10                0.8044  0.9216      0.9435      0.9698   0.9949   0.9940
+               SHAP-10-Direct         0.0762  0.0737      0.2184      0.2240   0.6409   0.6275
+               SHAP-10-NoPort         0.7970  0.9291      0.9312      0.9583   0.9929   0.9916
+               SHAP-10-NoPort-Direct  0.2419  0.1994      0.3800      0.3804   0.7537   0.7322
+               Target-10              0.8535  0.9683      0.9664      0.9947   0.9994   0.9994
+
+单任务耗时：平均 3.5 分钟，最长 4.3 分钟（20 个任务）
+
+配置级检验（n=18 个源–目标–类别配置；簇级=按无序数据集对合并为 9 簇的精确符号翻转）：
+  [nat/f1    ] Gain-10 vs Random-10                   Δ>0: 13/18  均值Δ=+0.0119  p_cfg=0.0368  p_cluster=0.0684  单配置显著(Wilcoxon+Holm)=7  (NB+Holm)=6
+  [nat/f1    ] MI-10 vs Random-10                     Δ>0: 14/18  均值Δ=+0.0163  p_cfg=0.0060  p_cluster=0.0039  单配置显著(Wilcoxon+Holm)=7  (NB+Holm)=6
+  [nat/f1    ] SHAP-10 vs Gain-10                     Δ>0: 13/18  均值Δ=+0.0021  p_cfg=0.1674  p_cluster=0.8906  单配置显著(Wilcoxon+Holm)=16  (NB+Holm)=15
+  [nat/f1    ] SHAP-10 vs MI-10                       Δ>0: 11/18  均值Δ=-0.0023  p_cfg=0.8986  p_cluster=0.7891  单配置显著(Wilcoxon+Holm)=18  (NB+Holm)=18
+  [nat/f1    ] SHAP-10 vs Random-10                   Δ>0: 14/18  均值Δ=+0.0140  p_cfg=0.0118  p_cluster=0.0527  单配置显著(Wilcoxon+Holm)=12  (NB+Holm)=8
+  [nat/f1    ] SHAP-10 vs Random-10-single            Δ>0: 14/18  均值Δ=+0.0136  p_cfg=0.0241  p_cluster=0.0566  单配置显著(Wilcoxon+Holm)=7  (NB+Holm)=0
+  [nat/f1    ] SHAP-10 vs SHAP-10-NoPort              Δ>0: 16/18  均值Δ=+0.0072  p_cfg=0.0023  p_cluster=0.0078  单配置显著(Wilcoxon+Holm)=15  (NB+Holm)=11
+  [nat/f1    ] SHAP-10-Direct vs Gain-10-Direct       Δ>0: 13/18  均值Δ=+0.0239  p_cfg=0.0759  p_cluster=0.2227  单配置显著(Wilcoxon+Holm)=4  (NB+Holm)=1
+  [nat/f1    ] SHAP-10-Direct vs MI-10-Direct         Δ>0: 11/18  均值Δ=+0.0087  p_cfg=0.4074  p_cluster=0.6289  单配置显著(Wilcoxon+Holm)=4  (NB+Holm)=3
+  [nat/f1    ] SHAP-10-Direct vs Random-10-Direct     Δ>0:  4/18  均值Δ=-0.0253  p_cfg=0.9731  p_cluster=0.9297  单配置显著(Wilcoxon+Holm)=2  (NB+Holm)=1
+  [nat/f1    ] SHAP-10-NoPort vs Random-10            Δ>0: 11/18  均值Δ=+0.0068  p_cfg=0.1231  p_cluster=0.2305  单配置显著(Wilcoxon+Holm)=6  (NB+Holm)=3
+  [nat/f1    ] SHAP-10-NoPort-Direct vs SHAP-10-Direct Δ>0:  6/18  均值Δ=+0.0432  p_cfg=0.8684  p_cluster=0.3281  单配置显著(Wilcoxon+Holm)=4  (NB+Holm)=2
+  [nat/pr_auc] Gain-10 vs Random-10                   Δ>0: 12/18  均值Δ=+0.0140  p_cfg=0.0594  p_cluster=0.0059  单配置显著(Wilcoxon+Holm)=9  (NB+Holm)=3
+  [nat/pr_auc] MI-10 vs Random-10                     Δ>0: 12/18  均值Δ=+0.0117  p_cfg=0.0300  p_cluster=0.0039  单配置显著(Wilcoxon+Holm)=8  (NB+Holm)=3
+  [nat/pr_auc] SHAP-10 vs Gain-10                     Δ>0: 13/18  均值Δ=-0.0002  p_cfg=0.5798  p_cluster=0.9766  单配置显著(Wilcoxon+Holm)=17  (NB+Holm)=16
+  [nat/pr_auc] SHAP-10 vs MI-10                       Δ>0: 12/18  均值Δ=+0.0020  p_cfg=0.3465  p_cluster=0.8125  单配置显著(Wilcoxon+Holm)=18  (NB+Holm)=16
+  [nat/pr_auc] SHAP-10 vs Random-10                   Δ>0: 15/18  均值Δ=+0.0138  p_cfg=0.0091  p_cluster=0.0918  单配置显著(Wilcoxon+Holm)=13  (NB+Holm)=4
+  [nat/pr_auc] SHAP-10 vs Random-10-single            Δ>0: 15/18  均值Δ=+0.0134  p_cfg=0.0134  p_cluster=0.0586  单配置显著(Wilcoxon+Holm)=5  (NB+Holm)=0
+  [nat/pr_auc] SHAP-10 vs SHAP-10-NoPort              Δ>0: 14/18  均值Δ=+0.0031  p_cfg=0.1187  p_cluster=0.3750  单配置显著(Wilcoxon+Holm)=16  (NB+Holm)=15
+  [nat/pr_auc] SHAP-10-Direct vs Gain-10-Direct       Δ>0: 10/18  均值Δ=+0.0116  p_cfg=0.4951  p_cluster=0.4258  单配置显著(Wilcoxon+Holm)=6  (NB+Holm)=3
+  [nat/pr_auc] SHAP-10-Direct vs MI-10-Direct         Δ>0:  8/18  均值Δ=-0.0174  p_cfg=0.5509  p_cluster=0.3398  单配置显著(Wilcoxon+Holm)=8  (NB+Holm)=2
+  [nat/pr_auc] SHAP-10-Direct vs Random-10-Direct     Δ>0:  7/18  均值Δ=-0.0162  p_cfg=0.8481  p_cluster=0.8184  单配置显著(Wilcoxon+Holm)=2  (NB+Holm)=0
+  [nat/pr_auc] SHAP-10-NoPort vs Random-10            Δ>0: 14/18  均值Δ=+0.0107  p_cfg=0.0134  p_cluster=0.1289  单配置显著(Wilcoxon+Holm)=7  (NB+Holm)=2
+  [nat/pr_auc] SHAP-10-NoPort-Direct vs SHAP-10-Direct Δ>0: 10/18  均值Δ=+0.0570  p_cfg=0.3465  p_cluster=0.1406  单配置显著(Wilcoxon+Holm)=6  (NB+Holm)=3
+  [std/f1    ] Gain-10 vs Random-10                   Δ>0: 13/18  均值Δ=+0.0003  p_cfg=0.0449  p_cluster=0.4863  单配置显著(Wilcoxon+Holm)=7  (NB+Holm)=5
+  [std/f1    ] MI-10 vs Random-10                     Δ>0: 15/18  均值Δ=+0.0137  p_cfg=0.0017  p_cluster=0.0293  单配置显著(Wilcoxon+Holm)=10  (NB+Holm)=6
+  [std/f1    ] SHAP-10 vs Gain-10                     Δ>0: 13/18  均值Δ=+0.0171  p_cfg=0.1815  p_cluster=0.5586  单配置显著(Wilcoxon+Holm)=15  (NB+Holm)=11
+  [std/f1    ] SHAP-10 vs MI-10                       Δ>0: 10/18  均值Δ=+0.0037  p_cfg=0.7019  p_cluster=0.5664  单配置显著(Wilcoxon+Holm)=18  (NB+Holm)=17
+  [std/f1    ] SHAP-10 vs Random-10                   Δ>0: 15/18  均值Δ=+0.0174  p_cfg=0.0028  p_cluster=0.0059  单配置显著(Wilcoxon+Holm)=13  (NB+Holm)=7
+  [std/f1    ] SHAP-10 vs Random-10-single            Δ>0: 14/18  均值Δ=+0.0213  p_cfg=0.0033  p_cluster=0.0039  单配置显著(Wilcoxon+Holm)=7  (NB+Holm)=0
+  [std/f1    ] SHAP-10 vs SHAP-10-NoPort              Δ>0: 15/18  均值Δ=+0.0017  p_cfg=0.0385  p_cluster=0.6914  单配置显著(Wilcoxon+Holm)=12  (NB+Holm)=11
+  [std/f1    ] SHAP-10-Direct vs Gain-10-Direct       Δ>0: 13/18  均值Δ=+0.0303  p_cfg=0.0552  p_cluster=0.1602  单配置显著(Wilcoxon+Holm)=4  (NB+Holm)=2
+  [std/f1    ] SHAP-10-Direct vs MI-10-Direct         Δ>0: 11/18  均值Δ=+0.0190  p_cfg=0.3560  p_cluster=0.3789  单配置显著(Wilcoxon+Holm)=4  (NB+Holm)=3
+  [std/f1    ] SHAP-10-Direct vs Random-10-Direct     Δ>0:  5/18  均值Δ=-0.0122  p_cfg=0.8677  p_cluster=0.7188  单配置显著(Wilcoxon+Holm)=2  (NB+Holm)=1
+  [std/f1    ] SHAP-10-NoPort vs Random-10            Δ>0: 15/18  均值Δ=+0.0157  p_cfg=0.0104  p_cluster=0.0586  单配置显著(Wilcoxon+Holm)=7  (NB+Holm)=3
+  [std/f1    ] SHAP-10-NoPort-Direct vs SHAP-10-Direct Δ>0:  6/18  均值Δ=+0.0359  p_cfg=0.9058  p_cluster=0.3125  单配置显著(Wilcoxon+Holm)=3  (NB+Holm)=1
+  [std/pr_auc] Gain-10 vs Random-10                   Δ>0: 13/18  均值Δ=+0.0015  p_cfg=0.1964  p_cluster=0.3672  单配置显著(Wilcoxon+Holm)=11  (NB+Holm)=2
+  [std/pr_auc] MI-10 vs Random-10                     Δ>0: 12/18  均值Δ=-0.0017  p_cfg=0.5169  p_cluster=0.6172  单配置显著(Wilcoxon+Holm)=11  (NB+Holm)=2
+  [std/pr_auc] SHAP-10 vs Gain-10                     Δ>0: 13/18  均值Δ=+0.0179  p_cfg=0.2121  p_cluster=0.3281  单配置显著(Wilcoxon+Holm)=16  (NB+Holm)=15
+  [std/pr_auc] SHAP-10 vs MI-10                       Δ>0: 12/18  均值Δ=+0.0211  p_cfg=0.0898  p_cluster=0.0508  单配置显著(Wilcoxon+Holm)=17  (NB+Holm)=14
+  [std/pr_auc] SHAP-10 vs Random-10                   Δ>0: 16/18  均值Δ=+0.0194  p_cfg=0.0012  p_cluster=0.0059  单配置显著(Wilcoxon+Holm)=15  (NB+Holm)=4
+  [std/pr_auc] SHAP-10 vs Random-10-single            Δ>0: 15/18  均值Δ=+0.0186  p_cfg=0.0038  p_cluster=0.0098  单配置显著(Wilcoxon+Holm)=5  (NB+Holm)=0
+  [std/pr_auc] SHAP-10 vs SHAP-10-NoPort              Δ>0: 13/18  均值Δ=+0.0101  p_cfg=0.0217  p_cluster=0.0156  单配置显著(Wilcoxon+Holm)=17  (NB+Holm)=11
+  [std/pr_auc] SHAP-10-Direct vs Gain-10-Direct       Δ>0: 11/18  均值Δ=-0.0120  p_cfg=0.8317  p_cluster=0.5039  单配置显著(Wilcoxon+Holm)=4  (NB+Holm)=2
+  [std/pr_auc] SHAP-10-Direct vs MI-10-Direct         Δ>0:  6/18  均值Δ=-0.0199  p_cfg=0.4423  p_cluster=0.2969  单配置显著(Wilcoxon+Holm)=14  (NB+Holm)=3
+  [std/pr_auc] SHAP-10-Direct vs Random-10-Direct     Δ>0:  5/18  均值Δ=-0.0239  p_cfg=0.9506  p_cluster=0.8945  单配置显著(Wilcoxon+Holm)=2  (NB+Holm)=1
+  [std/pr_auc] SHAP-10-NoPort vs Random-10            Δ>0: 14/18  均值Δ=+0.0093  p_cfg=0.0837  p_cluster=0.1445  单配置显著(Wilcoxon+Holm)=7  (NB+Holm)=2
+  [std/pr_auc] SHAP-10-NoPort-Direct vs SHAP-10-Direct Δ>0:  9/18  均值Δ=+0.0529  p_cfg=0.4423  p_cluster=0.1914  单配置显著(Wilcoxon+Holm)=7  (NB+Holm)=2
+
+零样本 SHAP-10-Direct 平均 AUC-ROC（std）= 0.600；>0.5 的配置 13/18

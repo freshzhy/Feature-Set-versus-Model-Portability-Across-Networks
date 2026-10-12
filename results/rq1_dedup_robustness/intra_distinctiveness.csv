@@ -1,0 +1,9 @@
+dataset,signatures,classes,pairs,mean_rho,median_rho,min_rho,max_rho
+UNSW,original,8,28,0.6634,0.6759,0.4595,0.8523
+UNSW,dedup,8,28,0.6401,0.6552,0.3566,0.8024
+CIC,original,10,45,0.4749,0.4276,0.1442,0.9051
+CIC,dedup,10,45,0.4687,0.4356,0.2031,0.9034
+ToN,original,8,28,0.61,0.6312,0.3109,0.8255
+ToN,dedup,8,28,0.5869,0.6284,0.2624,0.8095
+BoT,original,3,3,0.8114,0.8314,0.7638,0.8392
+BoT,dedup,3,3,0.7634,0.7252,0.7056,0.8595

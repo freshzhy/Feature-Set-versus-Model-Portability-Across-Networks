@@ -1,0 +1,52 @@
+dataset,scope,features,n_rows,dup_row_share,conflict_label_row_share,test_in_train_share_all,test_in_train_share_pos,test_in_train_share_neg,test_pos_seen_as_train_neg
+UNSW,whole_dataset,40,2390111,0.261,0.0061,,,,
+UNSW,class:Analysis,40,2299,0.7821,0.8404,,,,
+UNSW,class:Backdoor,40,2169,0.7473,0.8456,,,,
+UNSW,class:Benign,40,2295222,0.2604,0.0,,,,
+UNSW,class:DoS,40,5794,0.3319,0.3856,,,,
+UNSW,class:Exploits,40,31551,0.0617,0.0744,,,,
+UNSW,class:Fuzzers,40,22310,0.0905,0.098,,,,
+UNSW,class:Generic,40,16560,0.773,0.1211,,,,
+UNSW,class:Reconnaissance,40,12779,0.1686,0.1522,,,,
+UNSW,class:Shellcode,40,1427,0.0,0.0,,,,
+UNSW,split:DoS,40,12747,,,0.047,0.3494,0.0167,0.1872
+UNSW,split:DoS,SHAP-Top10,12747,,,0.0606,0.384,0.0283,0.3693
+UNSW,split:Reconnaissance,40,28114,,,0.0423,0.1647,0.0301,0.1107
+UNSW,split:Reconnaissance,SHAP-Top10,28114,,,0.054,0.1741,0.0419,0.1311
+ToN,whole_dataset,40,1999998,0.151,0.0,,,,
+ToN,class:Benign,40,1000000,0.2247,0.0,,,,
+ToN,class:backdoor,40,11431,0.0427,0.0,,,,
+ToN,class:ddos,40,182554,0.0344,0.0,,,,
+ToN,class:dos,40,70686,0.0363,0.0,,,,
+ToN,class:injection,40,68289,0.0082,0.0,,,,
+ToN,class:mitm,40,7723,0.0,0.0,,,,
+ToN,class:password,40,108217,0.0378,0.0,,,,
+ToN,class:scanning,40,332028,0.1906,0.0,,,,
+ToN,class:xss,40,219070,0.0004,0.0,,,,
+ToN,split:DoS,40,66000,,,0.0406,0.0133,0.0433,0.0
+ToN,split:DoS,SHAP-Top10,66000,,,0.4477,0.0138,0.4911,0.0
+ToN,split:Reconnaissance,40,66000,,,0.0316,0.1033,0.0244,0.0
+ToN,split:Reconnaissance,SHAP-Top10,66000,,,0.7986,0.3433,0.8441,0.0062
+CIC,whole_dataset,40,1999998,0.0773,0.0,,,,
+CIC,class:Benign,40,1000000,0.0451,0.0,,,,
+CIC,class:Bot,40,67547,0.9052,0.0,,,,
+CIC,class:DDOS attack-HOIC,40,444679,0.0109,0.0,,,,
+CIC,class:DDoS attacks-LOIC-HTTP,40,133583,0.3234,0.0,,,,
+CIC,class:DoS attacks-GoldenEye,40,21148,0.0,0.0,,,,
+CIC,class:DoS attacks-Hulk,40,183993,0.0,0.0,,,,
+CIC,class:DoS attacks-SlowHTTPTest,40,14116,0.0,0.0,,,,
+CIC,class:DoS attacks-Slowloris,40,9512,0.0,0.0,,,,
+CIC,class:FTP-BruteForce,40,20429,0.0,0.0,,,,
+CIC,class:Infilteration,40,56795,0.0048,0.0,,,,
+CIC,class:SSH-Bruteforce,40,48196,0.0,0.0,,,,
+CIC,split:DoS,40,66000,,,0.0227,0.0,0.0249,0.0
+CIC,split:DoS,SHAP-Top10,66000,,,0.0878,0.0065,0.096,0.0
+BoT,whole_dataset,40,1999999,0.0328,0.0,,,,
+BoT,class:Benign,40,135037,0.0828,0.0,,,,
+BoT,class:DDoS,40,904015,0.0312,0.0,,,,
+BoT,class:DoS,40,823125,0.0292,0.0,,,,
+BoT,class:Reconnaissance,40,137822,0.0154,0.0,,,,
+BoT,split:DoS,40,66000,,,0.0066,0.0007,0.0072,0.0
+BoT,split:DoS,SHAP-Top10,66000,,,0.1389,0.001,0.1527,0.0
+BoT,split:Reconnaissance,40,66000,,,0.0047,0.0037,0.0048,0.0
+BoT,split:Reconnaissance,SHAP-Top10,66000,,,0.0994,0.5483,0.0545,0.0002

@@ -1,0 +1,16 @@
+{
+ "cmd": "run",
+ "workers": 4,
+ "threads": 4,
+ "n_seeds": 10,
+ "n_random": 10,
+ "n_random_direct": 5,
+ "classes": [
+  "DoS",
+  "Reconnaissance"
+ ],
+ "timeout_min": 120,
+ "stall_min": 25,
+ "dedup": false,
+ "variant": "noscenario"
+}

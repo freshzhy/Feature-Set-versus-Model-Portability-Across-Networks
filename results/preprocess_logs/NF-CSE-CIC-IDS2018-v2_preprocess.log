@@ -1,0 +1,79 @@
+
+######################################################################
+#  数据集: NF-CSE-CIC-IDS2018-v2
+#  文件:   NF-CSE-CIC-IDS2018-v2/data/NF-CSE-CIC-IDS2018-v2.csv  (3072.1 MB)
+######################################################################
+正在读取（大文件请耐心等待）...
+读取完成: 18,893,708 行 × 45 列
+
+======================================================================
+  Step 1：跳过重复列验证（--skip-dup-check，已预验证）
+======================================================================
+  四个数据集均已确认 MAX_IP_PKT_LEN ≡ LONGEST_FLOW_PKT，直接删除
+
+======================================================================
+  Step 2：执行预处理管道
+======================================================================
+  数据集配置: NF-CSE-CIC-IDS2018-v2
+  排除类别:   ['Brute Force -Web', 'Brute Force -XSS', 'SQL Injection', 'DDOS attack-LOIC-UDP']
+  低置信类别: （无）
+  分层采样:   是，目标 2,000,000 行
+
+[2a] 删除标识符列: ['IPV4_SRC_ADDR', 'IPV4_DST_ADDR']  →  剩余 43 列
+[2b] 删除重复列: 'MAX_IP_PKT_LEN'  →  剩余 42 列
+[2c] 排除低样本类别 ['Brute Force -Web', 'Brute Force -XSS', 'SQL Injection', 'DDOS attack-LOIC-UDP']:
+     18,893,708 → 18,888,094 行（移除 5,614 行）
+  [采样] 18,888,094 行 → 目标 2,000,000 行
+         Benign 上限比例 50% → 上限 1,000,000
+         攻击类保底 10,000 条/类
+
+                                 Benign: 16,635,567 → 1,000,000
+                       DDOS attack-HOIC:  1,080,858 →  444,679
+                       DoS attacks-Hulk:    432,648 →  183,993
+                 DDoS attacks-LOIC-HTTP:    307,300 →  133,583
+                                    Bot:    143,097 →   67,547
+                          Infilteration:    116,361 →   56,795
+                         SSH-Bruteforce:     94,979 →   48,196
+                  DoS attacks-GoldenEye:     27,723 →   21,148
+                         FTP-BruteForce:     25,933 →   20,429
+               DoS attacks-SlowHTTPTest:     14,116 →   14,116  (全部保留)
+                  DoS attacks-Slowloris:      9,512 →    9,512  (全部保留)
+
+  [采样] 完成: 1,999,998 行
+
+[2e] 特征矩阵 X:      (1999998, 40)
+     二分类标签 y_bin:  (1999998,)  值域=[np.int64(0), np.int64(1)]
+     多分类标签 y_multi:(1999998,)  类别数=11
+
+======================================================================
+  Step 2f：最终攻击类别分布
+======================================================================
+                          Benign:  1,000,000  ( 50.00%)
+                DDOS attack-HOIC:    444,679  ( 22.23%)
+                DoS attacks-Hulk:    183,993  (  9.20%)
+          DDoS attacks-LOIC-HTTP:    133,583  (  6.68%)
+                             Bot:     67,547  (  3.38%)
+                   Infilteration:     56,795  (  2.84%)
+                  SSH-Bruteforce:     48,196  (  2.41%)
+           DoS attacks-GoldenEye:     21,148  (  1.06%)
+                  FTP-BruteForce:     20,429  (  1.02%)
+        DoS attacks-SlowHTTPTest:     14,116  (  0.71%)
+           DoS attacks-Slowloris:      9,512  (  0.48%)
+                           Total:  1,999,998
+
+✓ 所有特征均为数值类型，可直接送入 XGBoost/SHAP
+
+======================================================================
+  Step 3：保存预处理结果
+======================================================================
+  ✓ CSV:    processed/NF-CSE-CIC-IDS2018-v2_processed.csv  (281.9 MB)
+            1,999,998 行 × 42 列
+            特征数: 40  |  类别: ['Benign', 'Bot', 'DDOS attack-HOIC', 'DDoS attacks-LOIC-HTTP', 'DoS attacks-GoldenEye', 'DoS attacks-Hulk', 'DoS attacks-SlowHTTPTest', 'DoS attacks-Slowloris', 'FTP-BruteForce', 'Infilteration', 'SSH-Bruteforce']
+  ✓ 特征列: processed/NF-CSE-CIC-IDS2018-v2_feature_cols.txt
+
+======================================================================
+  完成
+======================================================================
+  最终规格: 1,999,998 样本 × 40 特征
+  攻击类别: ['Benign', 'Bot', 'DDOS attack-HOIC', 'DDoS attacks-LOIC-HTTP', 'DoS attacks-GoldenEye', 'DoS attacks-Hulk', 'DoS attacks-SlowHTTPTest', 'DoS attacks-Slowloris', 'FTP-BruteForce', 'Infilteration', 'SSH-Bruteforce']
+

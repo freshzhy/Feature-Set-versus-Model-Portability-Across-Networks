@@ -1,0 +1,13 @@
+semantic_class,dataset_pair,env_pair,jaccard,spearman_rho,spearman_pval,n_shared_features,shared_features
+DoS,BoT↔CIC,IoT network (botnet) / IT network (enterprise),0.1111,0.2929,0.066669,2,"CLIENT_TCP_FLAGS, L4_SRC_PORT"
+DoS,BoT↔ToN,IoT network (botnet) / IoT network,0.1111,0.1635,0.313471,2,"L4_SRC_PORT, TCP_WIN_MAX_IN"
+DoS,BoT↔UNSW,IoT network (botnet) / IT network (lab),0.1111,0.111,0.495372,2,"L4_SRC_PORT, SRC_TO_DST_SECOND_BYTES"
+DoS,CIC↔ToN,IT network (enterprise) / IoT network,0.1111,0.2003,0.215276,2,"L4_SRC_PORT, LONGEST_FLOW_PKT"
+DoS,CIC↔UNSW,IT network (enterprise) / IT network (lab),0.25,0.2962,0.063526,4,"L4_DST_PORT, L4_SRC_PORT, LONGEST_FLOW_PKT, MAX_TTL"
+DoS,ToN↔UNSW,IoT network / IT network (lab),0.25,0.1993,0.2177,4,"IN_PKTS, L4_SRC_PORT, LONGEST_FLOW_PKT, MIN_TTL"
+DDoS,BoT↔CIC,IoT network (botnet) / IT network (enterprise),0.25,0.4318,0.005404,4,"FLOW_DURATION_MILLISECONDS, IN_BYTES, L4_SRC_PORT, LONGEST_FLOW_PKT"
+DDoS,BoT↔ToN,IoT network (botnet) / IoT network,0.1765,0.5425,0.000299,3,"L7_PROTO, LONGEST_FLOW_PKT, SHORTEST_FLOW_PKT"
+DDoS,CIC↔ToN,IT network (enterprise) / IoT network,0.1765,0.5466,0.000264,3,"CLIENT_TCP_FLAGS, LONGEST_FLOW_PKT, TCP_WIN_MAX_IN"
+Reconnaissance,BoT↔ToN,IoT network (botnet) / IoT network,0.4286,0.7329,0.0,6,"FLOW_DURATION_MILLISECONDS, IN_BYTES, SHORTEST_FLOW_PKT, SRC_TO_DST_AVG_THROUGHPUT, TCP_FLAGS, TCP_WIN_MAX_IN"
+Reconnaissance,BoT↔UNSW,IoT network (botnet) / IT network (lab),0.1111,0.2268,0.159247,2,"L4_SRC_PORT, SHORTEST_FLOW_PKT"
+Reconnaissance,ToN↔UNSW,IoT network / IT network (lab),0.3333,0.3599,0.022558,5,"L4_DST_PORT, L7_PROTO, LONGEST_FLOW_PKT, SHORTEST_FLOW_PKT, SRC_TO_DST_SECOND_BYTES"

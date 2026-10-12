@@ -1,0 +1,73 @@
+rq1_dedup_robustness：RQ1/RQ2 签名对精确去重的稳健性
+========================================================================
+
+复现性核对（原始数据按 RQ1 流程复跑 vs results/rq1 已存签名，29 类）：
+  Top-10 Jaccard 最小 0.538，Spearman 最小 0.8683（都应为 1；若不是 1，说明复跑环境与当初不同，下面的比较应改用 orig 复跑结果解读）
+
+每个类别：原签名 vs 去重签名（按保留比例升序）
+  数据集  类别                             保留    测试正例          F1 原→去重   Jac   共享    ρ40  第1名
+  UNSW Backdoor                    15.4%      67   0.958→0.964     0.33    5  0.592  MIN_IP_PKT_LEN→SHORTEST_FLOW_PKT
+  UNSW Analysis                    16.0%      73   0.961→0.993     0.43    6  0.620  MAX_TTL→SHORTEST_FLOW_PKT
+  UNSW Generic                     32.4%    1073   0.963→0.976     0.54    7  0.764  同
+  CIC  Bot                         32.5%    4383   1.000→1.000     0.54    7  0.875  同
+  UNSW DoS                         61.3%     710   0.908→0.909     0.54    7  0.876  同
+  CIC  DDoS attacks-LOIC-HTTP      82.0%   10000   1.000→1.000     0.54    7  0.930  同
+  UNSW Reconnaissance              82.7%    2114   0.966→0.992     0.54    7  0.812  同
+  ToN  scanning                    83.0%   10000   0.973→0.972     0.82    9  0.946  同
+  UNSW Fuzzers                     89.9%    4011   0.957→0.981     0.54    7  0.912  同
+  UNSW Exploits                    92.5%    5835   0.948→0.965     0.43    6  0.867  同
+  ToN  backdoor                    97.9%    2237   0.999→0.999     0.67    8  0.873  同
+  ToN  password                    98.1%   10000   0.939→0.936     0.67    8  0.959  同
+  ToN  dos                         98.1%   10000   0.897→0.887     0.67    8  0.944  同
+  ToN  ddos                        98.2%   10000   0.972→0.971     0.82    9  0.969  TCP_WIN_MAX_IN→L4_DST_PORT
+  BoT  DDoS                        98.4%   10000   0.987→0.985     0.82    9  0.937  同
+  BoT  DoS                         98.5%   10000   0.957→0.950     1.00   10  0.975  同
+  BoT  Reconnaissance              99.2%   10000   0.971→0.972     1.00   10  0.966  同
+  CIC  DDOS attack-HOIC            99.5%   10000   1.000→1.000     0.54    7  0.946  同
+  ToN  injection                   99.6%   10000   0.808→0.820     1.00   10  0.969  同
+  CIC  Infilteration               99.8%   10000   0.441→0.428     0.67    8  0.932  同
+  ToN  xss                        100.0%   10000   0.910→0.902     0.54    7  0.961  同
+  CIC  SSH-Bruteforce             100.0%    9639   1.000→1.000     0.43    6  0.906  同
+  CIC  FTP-BruteForce             100.0%    4086   1.000→1.000     0.82    9  0.998  同
+  CIC  DoS attacks-SlowHTTPTest   100.0%    2823   1.000→1.000     0.82    9  0.998  同
+  CIC  DoS attacks-Hulk           100.0%   10000   1.000→1.000     1.00   10  0.979  同
+  ToN  mitm                       100.0%    1545   0.833→0.822     1.00   10  0.949  DNS_QUERY_ID→DNS_QUERY_TYPE
+  CIC  DoS attacks-GoldenEye      100.0%    4230   1.000→1.000     1.00   10  0.937  同
+  UNSW Shellcode                  100.0%     285   0.993→0.997     0.54    7  0.764  同
+  CIC  DoS attacks-Slowloris      100.0%    1902   1.000→1.000     0.67    8  0.963  NUM_PKTS_256_TO_512_BYTES→RETRANSMITTED_IN_BYTES
+
+汇总：全部 29 类 Top-10 Jaccard 中位数 0.67（范围 0.33–1.00），Spearman 中位数 0.937（最小 0.592），第 1 名特征不变 24/29
+      保留 < 50% 的 4 类：Jaccard 中位数 0.48，Spearman 中位数 0.692
+
+数据集内区分度（Table IV 口径，类间成对 Spearman）：
+dataset signatures  classes  pairs  mean_rho  median_rho  min_rho  max_rho
+   UNSW   original        8     28    0.6634      0.6759   0.4595   0.8523
+   UNSW      dedup        8     28    0.6401      0.6552   0.3566   0.8024
+    CIC   original       10     45    0.4749      0.4276   0.1442   0.9051
+    CIC      dedup       10     45    0.4687      0.4356   0.2031   0.9034
+    ToN   original        8     28    0.6100      0.6312   0.3109   0.8255
+    ToN      dedup        8     28    0.5869      0.6284   0.2624   0.8095
+    BoT   original        3      3    0.8114      0.8314   0.7638   0.8392
+    BoT      dedup        3      3    0.7634      0.7252   0.7056   0.8595
+
+跨数据集签名相似度（Table V 口径）：
+semantic_class     pair  jaccard_original  spearman_original  jaccard_dedup  spearman_dedup
+           DoS UNSW↔CIC            0.2500             0.2962         0.1765          0.3790
+           DoS UNSW↔ToN            0.2500             0.1993         0.1765          0.1880
+           DoS UNSW↔BoT            0.1111             0.1110         0.1111          0.1140
+           DoS  CIC↔ToN            0.1111             0.2003         0.1111          0.2136
+           DoS  CIC↔BoT            0.1111             0.2929         0.1111          0.2560
+           DoS  ToN↔BoT            0.1111             0.1635         0.0526          0.1784
+          DDoS  CIC↔ToN            0.1765             0.5466         0.2500          0.5625
+          DDoS  CIC↔BoT            0.2500             0.4318         0.3333          0.3708
+          DDoS  ToN↔BoT            0.1765             0.5425         0.1765          0.3549
+Reconnaissance UNSW↔ToN            0.3333             0.3599         0.2500          0.3794
+Reconnaissance UNSW↔BoT            0.1111             0.2268         0.1765          0.2269
+Reconnaissance  ToN↔BoT            0.4286             0.7329         0.3333          0.6587
+
+按语义类别平均：
+                jaccard_original  spearman_original  jaccard_dedup  spearman_dedup
+semantic_class                                                                    
+DDoS                       0.201              0.507          0.253           0.429
+DoS                        0.157              0.211          0.123           0.222
+Reconnaissance             0.291              0.440          0.253           0.422

@@ -1,0 +1,5 @@
+dataset,n_classes,n_pairs,mean_rho,median_rho,min_rho,max_rho,pct_pairs_lt_0.30,pct_pairs_lt_0.50,most_similar_pair,most_similar_rho,most_distinct_pair,most_distinct_rho
+UNSW,8,28,0.6634,0.6759,0.4595,0.8523,0.0,14.3,Analysis ↔ Backdoor,0.8523,Analysis ↔ Generic,0.4595
+CIC,10,45,0.4749,0.4276,0.1442,0.9051,4.4,62.2,DoS attacks-SlowHTTPTest ↔ FTP-BruteForce,0.9051,FTP-BruteForce ↔ Infilteration,0.1442
+ToN,8,28,0.61,0.6312,0.3109,0.8255,0.0,17.9,dos ↔ mitm,0.8255,dos ↔ password,0.3109
+BoT,3,3,0.8114,0.8314,0.7638,0.8392,0.0,0.0,DoS ↔ Reconnaissance,0.8392,DDoS ↔ Reconnaissance,0.7638

@@ -1,0 +1,16 @@
+# public datasets (not redistributed) and regenerable intermediates
+data/raw/*.csv
+data/processed/*
+!data/processed/README.md
+# large caches, per-task parts and run logs
+results/rq3_*/cache/
+results/**/parts/
+results/**/logs/
+results/logs/
+results/**/progress.log
+*.npy
+*.pid
+# environment
+.venv/
+__pycache__/
+.DS_Store

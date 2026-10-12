@@ -1,0 +1,14 @@
+{
+ "cmd": "run",
+ "workers": 4,
+ "threads": 4,
+ "n_seeds": 30,
+ "n_random": 20,
+ "n_random_direct": 10,
+ "classes": [
+  "DoS",
+  "Reconnaissance"
+ ],
+ "timeout_min": 120,
+ "stall_min": 25
+}

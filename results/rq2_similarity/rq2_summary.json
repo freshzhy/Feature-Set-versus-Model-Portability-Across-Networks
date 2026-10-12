@@ -1,0 +1,35 @@
+{
+  "DoS": {
+    "jaccard_mean": 0.1574,
+    "jaccard_min": 0.1111,
+    "jaccard_max": 0.25,
+    "spearman_mean": 0.2105,
+    "spearman_min": 0.111,
+    "spearman_max": 0.2962,
+    "n_datasets": 4,
+    "n_pairs": 6,
+    "conclusion": "LOW transferability — signatures network-specific"
+  },
+  "DDoS": {
+    "jaccard_mean": 0.201,
+    "jaccard_min": 0.1765,
+    "jaccard_max": 0.25,
+    "spearman_mean": 0.507,
+    "spearman_min": 0.4318,
+    "spearman_max": 0.5466,
+    "n_datasets": 3,
+    "n_pairs": 3,
+    "conclusion": "MODERATE transferability — partial signature overlap"
+  },
+  "Reconnaissance": {
+    "jaccard_mean": 0.291,
+    "jaccard_min": 0.1111,
+    "jaccard_max": 0.4286,
+    "spearman_mean": 0.4399,
+    "spearman_min": 0.2268,
+    "spearman_max": 0.7329,
+    "n_datasets": 3,
+    "n_pairs": 3,
+    "conclusion": "LOW transferability — signatures network-specific"
+  }
+}

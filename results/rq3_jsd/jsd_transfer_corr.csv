@@ -1,0 +1,7 @@
+subset,jsd_metric,n_pairs,spearman_rho,p_value
+All,jsd_all_feats,18,-0.1825,0.468614
+DoS,jsd_all_feats,12,0.0424,0.895893
+Reconnaissance,jsd_all_feats,6,0.0,1.0
+All,jsd_topk_feats,18,-0.3148,0.203314
+DoS,jsd_topk_feats,12,-0.2657,0.403833
+Reconnaissance,jsd_topk_feats,6,0.0286,0.957155

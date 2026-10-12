@@ -1,0 +1,50 @@
+{
+  "UNSW": {
+    "Benign": 2295222,
+    "Exploits": 31551,
+    "Generic": 16560,
+    "Fuzzers": 22310,
+    "Backdoor": 2169,
+    "DoS": 5794,
+    "Reconnaissance": 12779,
+    "Shellcode": 1427,
+    "Worms": 164,
+    "Analysis": 2299
+  },
+  "ToN": {
+    "ransomware": 3425,
+    "Benign": 6099469,
+    "xss": 2455020,
+    "scanning": 3781419,
+    "password": 1153323,
+    "dos": 712609,
+    "ddos": 2026234,
+    "injection": 684465,
+    "mitm": 7723,
+    "backdoor": 16809
+  },
+  "CIC": {
+    "SSH-Bruteforce": 94979,
+    "Benign": 16635567,
+    "DDoS attacks-LOIC-HTTP": 307300,
+    "DDOS attack-HOIC": 1080858,
+    "DoS attacks-Slowloris": 9512,
+    "DoS attacks-Hulk": 432648,
+    "FTP-BruteForce": 25933,
+    "Infilteration": 116361,
+    "Bot": 143097,
+    "DoS attacks-GoldenEye": 27723,
+    "Brute Force -Web": 2143,
+    "DoS attacks-SlowHTTPTest": 14116,
+    "SQL Injection": 432,
+    "DDOS attack-LOIC-UDP": 2112,
+    "Brute Force -XSS": 927
+  },
+  "BoT": {
+    "DoS": 16673183,
+    "DDoS": 18331847,
+    "Reconnaissance": 2620999,
+    "Benign": 135037,
+    "Theft": 2431
+  }
+}

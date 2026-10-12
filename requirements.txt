@@ -1,0 +1,9 @@
+# Environment used for the results reported in the paper: Python 3.12, XGBoost 3.2.0 (tree_method = hist).
+xgboost==3.2.0
+numpy>=1.26
+pandas>=2.1
+scikit-learn>=1.4
+scipy>=1.11
+shap>=0.45
+matplotlib>=3.8
+seaborn>=0.13
